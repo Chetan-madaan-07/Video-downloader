@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 /* Navbar Wrapper */
 .navbar {
     display: flex;
@@ -132,23 +133,27 @@
     .nav-right.show {
         display: flex;
     }
+
     .nav-middle li a {
         font-size: 16px;
         padding: 10px;
         text-align: center;
     }
+
     .nav-right button {
         width: 80%;
         margin: 0 auto;
         border-bottom: none;
     }
+
     .nav-left {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
     .navbar.no-shadow {
-  box-shadow: none;
-}
+        box-shadow: none;
+    }
 
 }
