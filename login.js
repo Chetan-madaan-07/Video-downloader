@@ -8,8 +8,6 @@ function toggleMenu() {
 const container = document.querySelector('.container');
 const show_Login = document.getElementById('show_Login');
 const show_register = document.getElementById('show_register');
-const slide_image = document.getElementById('.image');
-
 // Event: Show Register Form
 show_register.addEventListener('click', (e) => {
   e.preventDefault(); // prevent default anchor behavior
@@ -21,11 +19,10 @@ show_Login.addEventListener('click', (e) => {
   e.preventDefault();
   container.classList.remove('active');
 });
-
-slide_image.addEventListener('click', (e) => {
-  e.preventDefault(); // prevent default anchor behavior
+const params = new URLSearchParams(window.location.search);
+if (params.get('mode') === 'register') {
   container.classList.add('active');
-});
+}
 
 
 

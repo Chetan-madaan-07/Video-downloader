@@ -72,6 +72,14 @@
 .login-btn:hover {
     background-color: #e5e7eb;
 }
+.login-btn a {
+    text-decoration: none;
+    color: black;
+}
+.create-btn a {
+    text-decoration: none;
+    color: white;
+}
 
 .create-btn {
     padding: 8px 18px;
