@@ -34,6 +34,11 @@
     color: #111;
 }
 
+.logo-text a {
+    color: #111;
+    text-decoration: none;
+}
+
 /* Middle - Nav Links */
 .nav-middle {
     list-style: none;
@@ -72,10 +77,12 @@
 .login-btn:hover {
     background-color: #e5e7eb;
 }
+
 .login-btn a {
     text-decoration: none;
     color: black;
 }
+
 .create-btn a {
     text-decoration: none;
     color: white;
@@ -164,4 +171,137 @@
         box-shadow: none;
     }
 
+}
+
+/* main tag */
+.hero {
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.4;
+}
+
+.highlight {
+    color: #8b5cf6;
+}
+
+.subtext {
+    font-size: 18px;
+    color: #6b7280;
+    margin-top: 16px;
+}
+
+.highlight:hover {
+    color: #7c3aed;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+h1:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.subtext:hover {
+    color: #4b5563;
+    transition: color 0.3s ease;
+}
+.download-box-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-box {
+    height: 150px;
+    width: 50%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+   border-radius: 10px;
+}
+
+.link-input {
+    width: 60%;
+    height: 30%;
+    max-width: 500px;
+    padding: 14px 20px;
+    font-size: 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.link-input:focus {
+    border-color: #8b5cf6;
+}
+
+.download-btn {
+    padding: 14px 24px;
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #7c3aed;
+}
+.more-options {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.more-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.more-header i {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.format-list {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.format-list label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

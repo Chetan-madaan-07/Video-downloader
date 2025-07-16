@@ -41,6 +41,10 @@
     font-weight: 700;
     color: #111;
 }
+.logo-text a {
+  text-decoration: none;
+  color: #111;
+}
 
 /* Middle - Nav Links */
 .nav-middle {

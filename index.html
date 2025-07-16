@@ -7,6 +7,9 @@
     <title>Reel-Fetch (Download Online videos for free!) </title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -16,7 +19,7 @@
         <nav class="navbar">
             <div class="nav-left">
                 <!-- <img src="https://img.icons8.com/fluency/28/download--v1.png" alt="Logo" class="logo-icon" /> -->
-                <span class="logo-text">Reel-Fetch</span>
+                <span class="logo-text"><a href="index.html">Reel-Fetch</a></span>
             </div>
             <!-- Hamburger Icon -->
             <div class="hamburger" onclick="toggleMenu()">
@@ -30,16 +33,41 @@
                 <li><a href="">Help</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
-            
+
 
             <div class="nav-right" id="navBtns">
                 <button class="login-btn"><a href="login.html">Login</a></button>
                 <button class="create-btn"><a href="login.html?mode=register">Create account</a></button>
             </div>
-
         </nav>
         <!-- Navbar End -->
     </header>
+
+    <main>
+        <section class="hero">
+            <h1>Download Videos from YouTube, Instagram, and More — <span class="highlight">100% Free</span></h1>
+            <p class="subtext">No signup, no limits. Just paste the link and go.</p>
+        </section>
+        <div class="download-box-div">
+            <section class="download-box">
+                <input type="text" placeholder=" Paste video link here..." class="link-input">
+                <button class="download-btn">Download</button>
+                <div class="more-options">
+                    <div class="more-header" onclick="toggleDropdown()">
+                        More options<i class="fa-sharp fa-thin fa-caret-down"></i>
+                    </div>
+                    <div class="format-list" id="formatList">
+                        <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
+                        <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
+                        <label><input type="radio" name="format" value="720p"> 720p HD</label>
+                        <label><input type="radio" name="format" value="480p"> 480p SD</label>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
 
 
 </body>
