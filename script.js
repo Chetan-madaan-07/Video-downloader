@@ -5,8 +5,16 @@ function toggleMenu() {
 }
 function toggleDropdown() {
   const list = document.getElementById("formatList");
-  list.style.display = list.style.display === "flex" ? "none" : "flex";
-
   const icon = document.querySelector(".more-header i");
-  icon.style.transform = list.style.display === "flex" ? "rotate(180deg)" : "rotate(0)";
+
+  // Toggle visibility
+  if (list.style.display === "flex") {
+    list.style.display = "none";
+    icon.style.transform = "rotate(0deg)";
+  } else {
+    list.style.display = "flex";
+    icon.style.transform = "rotate(180deg)";
+  }
 }
+
+

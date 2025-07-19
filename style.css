@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Navbar Wrapper */
 .navbar {
@@ -176,7 +181,7 @@
 /* main tag */
 .hero {
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 100px 20px 20px;
 }
 
 .hero h1 {
@@ -214,13 +219,7 @@ h1:hover {
     color: #4b5563;
     transition: color 0.3s ease;
 }
-
-.download-box-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* 
 .download-box {
     height: 150px;
     width: 50%;
@@ -235,9 +234,10 @@ h1:hover {
 }
 
 .link-input {
-    width: 60%;
+    background-color: #dde1ea;
+    width: 85%;
     height: 30%;
-    max-width: 500px;
+    margin-top: 20px;
     padding: 14px 20px;
     font-size: 16px;
     border: 2px solid #e5e7eb;
@@ -251,7 +251,10 @@ h1:hover {
 }
 
 .download-btn {
-    padding: 14px 24px;
+    position: absolute;
+    top: 44.3%;
+    transform: translatex(210%);
+    padding: 17px 24px;
     background-color: #8b5cf6;
     color: white;
     border: none;
@@ -311,4 +314,25 @@ h1:hover {
     display: flex;
     align-items: center;
     gap: 10px;
+} */
+.download-box {
+    width: 50%;
+    height: 200px;
+    margin-right: 25%;
+    margin-left: 25%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
 }
+.input {
+    
+}
+.format-list {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
