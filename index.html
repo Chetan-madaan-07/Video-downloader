@@ -48,24 +48,26 @@
             <h1>Download Videos from YouTube, Instagram, and More — <span class="highlight">100% Free</span></h1>
             <p class="subtext">No signup, no limits. Just paste the link and go.</p>
         </section>
-            <section class="download-box">
-                <div class="input">
-                <input type="text" placeholder=" Paste video link here..." class="link-input" required> 
+        <section class="download-box">
+            <form action="" class="input-group" onsubmit="hnadleDownload(event)">
+                <input type="text" placeholder="🔗 Paste video link here..." class="link-input" required>
                 <button class="download-btn" type="submit">Download</button>
-                </div>
-                 <div class="more-options">
-                    <div class="more-header" onclick="toggleDropdown()">
-                        <p>More Options</p>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                    <div class="format-list" id="formatList">
-                        <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
-                        <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
-                        <label><input type="radio" name="format" value="720p"> 720p HD</label>
-                        <label><input type="radio" name="format" value="480p"> 480p SD</label>
-                    </div>
-                </div> 
-            </section>
+            </form>
+
+
+            <div class="more-options">
+                <button class="more-header" type="button" onclick="toggleDropdown()">
+                    <span>More Options</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </button>
+                <fieldset class="format-list" id="formatList">
+                    <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
+                    <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
+                    <label><input type="radio" name="format" value="720p"> 720p HD</label>
+                    <label><input type="radio" name="format" value="480p"> 480p SD</label>
+                </fieldset>
+            </div>
+        </section>
 
     </main>
 

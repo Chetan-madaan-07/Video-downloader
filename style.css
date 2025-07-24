@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 .body {
     display: flex;
     justify-content: center;
@@ -219,102 +220,7 @@ h1:hover {
     color: #4b5563;
     transition: color 0.3s ease;
 }
-/* 
-.download-box {
-    height: 150px;
-    width: 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    border-radius: 20px;
-}
 
-.link-input {
-    background-color: #dde1ea;
-    width: 85%;
-    height: 30%;
-    margin-top: 20px;
-    padding: 14px 20px;
-    font-size: 16px;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.link-input:focus {
-    border-color: #8b5cf6;
-}
-
-.download-btn {
-    position: absolute;
-    top: 44.3%;
-    transform: translatex(210%);
-    padding: 17px 24px;
-    background-color: #8b5cf6;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #7c3aed;
-}
-
-.more-options {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 15px;
-    color: #4b5563;
-}
-
-.more-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-weight: 500;
-}
-.more-header p {
-    opacity: 0.5;
-    display: inline;
-}
-
-.more-header i {
-    font-size: 20px;
-    transition: transform 0.3s ease;
-    opacity: 0.5;
-    display: inline;
-}
-
-.format-list {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.format-list label {
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-} */
 .download-box {
     width: 50%;
     height: 200px;
@@ -322,17 +228,95 @@ h1:hover {
     margin-left: 25%;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     border-radius: 20px;
-    overflow: hidden;
     text-align: center;
+    padding: 0px 20px;
 }
-.input {
-    
+
+.input-group {
+    width: 100%;
+    padding: 50px 20px 20px 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 20px;
+
 }
+
+.link-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 120px 30px 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f4f1ff;
+    font-size: 16px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+    background-image: url();
+}
+
+.download-btn {
+    position: absolute;
+    height: 52px;
+    top: 60%; 
+    right: 30px;
+    background: linear-gradient(to right, #7f5eff, #5a36f0);
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+    background: linear-gradient(to right, #5a36f0, #7f5eff);
+}
+
+.more-options {
+    position: relative;
+}
+
+.more-header {
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .format-list {
-  display: none; /* hidden by default */
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    gap: 10px;
+    margin-top: 15px;
+    border: none;
+    padding: 15px 20px;
+    font-size: 15px;
+    left: 50%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translate(-50%, -10px);
 }
+.format-list.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    display: flex;
+    visibility: visible;
+    pointer-events: auto;
 
-
+}
+.more-header i {
+    transition: transform 0.3s ease;
+}
+.more-header i.rotated {
+    transform: rotate(180deg);
+}

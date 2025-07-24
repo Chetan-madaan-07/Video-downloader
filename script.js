@@ -7,14 +7,19 @@ function toggleDropdown() {
   const list = document.getElementById("formatList");
   const icon = document.querySelector(".more-header i");
 
-  // Toggle visibility
-  if (list.style.display === "flex") {
-    list.style.display = "none";
-    icon.style.transform = "rotate(0deg)";
-  } else {
-    list.style.display = "flex";
-    icon.style.transform = "rotate(180deg)";
-  }
+  list.classList.toggle("show");
+  icon.classList.toggle("rotated");
 }
+
+function handleDownload(event) {
+    event.preventDefault(); // form submit hone pe page reload na ho
+    const link = document.querySelector('.link-input').value;
+    const format = document.querySelector('input[name="format"]:checked').value;
+
+    console.log("Link:", link);
+    console.log("Format:", format);
+    // future: backend call ya download logic yahin ayega
+}
+
 
 
