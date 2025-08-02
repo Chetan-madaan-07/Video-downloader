@@ -1,3 +1,12 @@
-# .gitignore file ke andar likho:
-node_modules/
+# Python cache
+__pycache__/
+*.pyc
 
+# Virtual environment
+venv/
+ENV/
+.env/
+
+# OS files
+.DS_Store
+Thumbs.db
