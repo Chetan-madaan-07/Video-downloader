@@ -178,47 +178,52 @@
     }
 
 }
-
 /* main tag */
+
+ /* Hero Section ko style karne ke liye */
+/* style.css */
+
 .hero {
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px 20px;
+    padding: 60px 20px;
+    min-height: 200px;
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 2.5rem;
+    color: #333;
     font-weight: 700;
-    color: #1f2937;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.4;
+    font-family: monospace;
+    /* Yahan se CSS animation hata diya gaya hai */
 }
 
-.highlight {
-    color: #8b5cf6;
+.hero .highlight {
+    color: #007bff;
+    font-weight: 700;
 }
 
-.subtext {
-    font-size: 18px;
-    color: #6b7280;
-    margin-top: 16px;
+/* Ye cursor JS se add hoga */
+.typewriter-cursor {
+    font-weight: bold;
+    color: orange;
+    animation: blink 1s step-end infinite;
 }
 
-.highlight:hover {
-    color: #7c3aed;
-    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
-    transition: all 0.3s ease;
-    cursor: pointer;
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-h1:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
-}
-
-.subtext:hover {
-    color: #4b5563;
-    transition: color 0.3s ease;
+.hero .subtext {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-top: 15px;
 }
 
 .download-box {
