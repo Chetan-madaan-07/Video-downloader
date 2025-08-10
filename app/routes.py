@@ -1,6 +1,18 @@
-from flask import Blueprint, request, send_file, jsonify
-from .downloader import download_video, get_progress  # get_progress added
+from flask import Blueprint, request, send_file, jsonify, render_template, after_this_request
+from .downloader import download_video # get_progress added
 import os
+#route for main homepage
+# File: app/routes.py
+views = Blueprint('views', __name__, template_folder='templates', static_folder='static')
+@views.route('/')
+@views.route('/index')
+def index(): 
+    return render_template('index.html')
+ 
+#route for homepage
+@views.route('/login')
+def login():
+    return render_template('login.html')
 
 main = Blueprint('main', __name__)
 
@@ -15,6 +27,13 @@ def download():
 
     if success and os.path.exists(file_path):
         filename = os.path.basename(file_path)
+        @after_this_request
+        def cleanup(response):
+            try: 
+                os.remove(file_path)
+            except Exception as e:
+                print(f"Error handling file: {e}")
+                return response
         return send_file(
             file_path,
             as_attachment=True,
@@ -22,10 +41,6 @@ def download():
         )
     else:
         return jsonify({"status": "error", "message": "Download failed"}), 500
-
-@main.route('/progress', methods=['GET'])
-def progress():
-    return jsonify(get_progress())
 
 
 

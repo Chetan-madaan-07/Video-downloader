@@ -1,31 +1,11 @@
 import yt_dlp
 import os
-
-# PC ka default Downloads folder
-DOWNLOAD_DIR = os.path.join(os.path.expanduser("~"), "Downloads")
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+DOWNLOAD_DIR = os.path.join(APP_ROOT, '..' , 'temp_downloads')
 
 # Agar downloads folder exist nahi karta, toh bana do
 if not os.path.exists(DOWNLOAD_DIR):
     os.makedirs(DOWNLOAD_DIR)
-
-# Global progress data store
-progress_data = {
-    "status": "idle",       # idle / downloading / finished / error
-    "percentage": 0         # 0 - 100
-}
-
-# Default progress hook
-def progress_hook(d):
-    if d['status'] == 'downloading':
-        total_bytes = d.get('total_bytes', 0)
-        downloaded_bytes = d.get('downloaded_bytes', 0)
-        if total_bytes > 0:
-            progress = int(downloaded_bytes * 100 / total_bytes)
-            progress_data["status"] = "downloading"
-            progress_data["percentage"] = progress
-    elif d['status'] == 'finished':
-        progress_data["status"] = "finished"
-        progress_data["percentage"] = 100
 
 
 def download_video(url, format_choice):
@@ -35,16 +15,12 @@ def download_video(url, format_choice):
     Returns: (success, file_path)
     """
     try:
-        # Download start hone se pehle reset karte hain progress
-        progress_data["status"] = "downloading"
-        progress_data["percentage"] = 0
 
         # yt-dlp options
         ydl_opts = {
             'outtmpl': f'{DOWNLOAD_DIR}/%(title)s.%(ext)s',
             'merge_output_format': 'mp4',
             'noplaylist': True,
-            'progress_hooks': [progress_hook]  # progress track
         }
 
         # Format selection
@@ -86,13 +62,9 @@ def download_video(url, format_choice):
 
     except Exception as e:
         print("Error:", e)
-        progress_data["status"] = "error"
         return False, None
 
 
-# API ke liye progress return
-def get_progress():
-    return progress_data
 
 
 
