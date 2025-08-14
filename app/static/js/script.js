@@ -7,49 +7,61 @@ document.addEventListener("DOMContentLoaded", function() {
     h1Element.innerHTML = '';
 
     // --- Animation Ki Alag-Alag Speed Settings ---
-    const normalTypingSpeed = 120;  // Dikhne wale text ki speed
-    const fastTypingSpeed = 20;     // Invisible HTML tag ki speed
-    const deletingSpeed = 60;
-    const loopPauseTime = 2000;
+   const normalTypingSpeed = 70;
+    const fastTypingSpeed = 5;
+    const normalDeletingSpeed = 50;  // Normal delete speed
+    const fastDeletingSpeed = 0;     // HTML tags ke liye fast delete speed
+    const loopPauseTime = 4000;
 
     // --- HTML Tag Ki Position Pata Karo ---
     const tagStartIndex = originalHTML.indexOf('<');
     const tagEndIndex = originalHTML.indexOf('>') + 1; // '>' character ko bhi include karna hai
-
     let charIndex = 0;
     let isDeleting = false;
 
-    function typeWriterLoop() {
-        const currentHTML = originalHTML.substring(0, charIndex);
-        h1Element.innerHTML = currentHTML + '<span class="typewriter-cursor">|</span>';
+    // --- Helper functions for each action ---
 
-        // --- TYPE KARNE WALI LOGIC ---
-        if (!isDeleting && charIndex < originalHTML.length) {
-            
-            let currentSpeed; // Har character ke liye speed alag ho sakti hai
+function handleTyping() {
+    // Check karo ki kya hum invisible tag wale hisse me hain
+    const isInsideTag = charIndex >= tagStartIndex && charIndex < tagEndIndex;
+    const currentSpeed = isInsideTag ? fastTypingSpeed : normalTypingSpeed;
 
-            // Check karo ki kya hum invisible tag wale hisse me hain?
-            if (charIndex >= tagStartIndex && charIndex < tagEndIndex) {
-                // Agar haan, to fast speed use karo
-                currentSpeed = fastTypingSpeed;
-            } else {
-                // Warna normal speed use karo
-                currentSpeed = normalTypingSpeed;
-            }
+    charIndex++;
+    setTimeout(typeWriterLoop, currentSpeed);
+}
 
-            charIndex++;
-            setTimeout(typeWriterLoop, currentSpeed);
+function handleDeleting() {
+    // Check karo ki kya hum invisible tag wale hisse me hain
+    const isInsideTag = charIndex > tagStartIndex && charIndex <= tagEndIndex;
+    const currentSpeed = isInsideTag ? fastDeletingSpeed : normalDeletingSpeed;
+    
+    charIndex--;
+    setTimeout(typeWriterLoop, currentSpeed);
+}
 
-        } 
-        // --- BAAKI LOGIC WAISA HI HAI ---
-        else if (isDeleting && charIndex > 0) {
-            charIndex--;
-            setTimeout(typeWriterLoop, deletingSpeed);
-        } else {
-            isDeleting = !isDeleting;
-            setTimeout(typeWriterLoop, loopPauseTime);
-        }
+function handleReversing() {
+    isDeleting = !isDeleting;
+    
+    // Agle loop se pehle rukne ka time decide karo
+    const pauseTime = (charIndex === 0) ? 500 : loopPauseTime;
+    setTimeout(typeWriterLoop, pauseTime);
+}
+
+// --- MAIN LOOP FUNCTION (Ab bahut saaf ho gaya hai) ---
+function typeWriterLoop() {
+    // Ye line waise hi rahegi
+    const currentHTML = originalHTML.substring(0, charIndex);
+    h1Element.innerHTML = currentHTML + '<span class="typewriter-cursor">|</span>';
+
+    // Ab ye bas sahi helper function ko bulayega
+    if (!isDeleting && charIndex < originalHTML.length) {
+        handleTyping();
+    } else if (isDeleting && charIndex > 0) {
+        handleDeleting();
+    } else {
+        handleReversing();
     }
+}
 
     typeWriterLoop();
 });
