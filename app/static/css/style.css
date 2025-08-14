@@ -187,7 +187,7 @@
     align-items: center;
     text-align: center;
     padding: 60px 20px;
-    min-height: 200px;
+    height: 200px;
 }
 
 .hero h1 {
@@ -226,7 +226,7 @@
     height: 200px;
     margin-right: 25%;
     margin-left: 25%;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     border-radius: 20px;
     text-align: center;
     padding: 0px 20px;
@@ -319,4 +319,62 @@
 }
 .more-header i.rotated {
     transform: rotate(180deg);
+}
+/* info section */
+.how-to-section {
+    margin-top: 20px;
+    padding: 60px 20px; /* Section mein upar-neeche space */
+    text-align: center; /* Sab kuch center mein */
+    background-color: white; /* Halka sa grey background */
+}
+
+.how-to-section h2 {
+    font-size: 2rem; /* Badi heading */
+    margin-bottom: 40px; /* Heading ke neeche space */
+    color: #333;
+}
+
+.steps-container {
+    display: flex; /* Steps ko ek line mein laao */
+    justify-content: space-around; /* Unke beech barabar space do */
+    align-items: flex-start; /* Upar se align karo */
+    flex-wrap: wrap; /* Agar screen choti ho to neeche aa jaye */
+    gap: 20px; /* Steps ke beech mein gap */
+}
+
+.step {
+    flex: 1; /* Har step ko barabar jagah do */
+    max-width: 300px; /* Maximum width */
+    padding: 20px;
+}
+
+.step i {
+    font-size: 3rem; /* Icon ka size */
+    color: #007bff; /* Icon ka color (blue) */
+    margin-bottom: 20px; /* Icon ke neeche space */
+}
+
+.step h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.step p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* === Mobile ke liye Responsive banao === */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column; /* Choti screen par steps ko ek ke neeche ek laao */
+        align-items: center; /* Center mein rakho */
+    }
+
+    .step {
+        max-width: 100%; /* Poori width le lo */
+        margin-bottom: 20px;
+    }
 }
