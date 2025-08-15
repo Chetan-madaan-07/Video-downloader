@@ -255,12 +255,11 @@
 
 .download-btn {
     position: absolute;
-    height: 52px;
     top: 60%; 
     right: 30px;
     background: linear-gradient(to right, #7f5eff, #5a36f0);
     transform: translateY(-50%);
-    padding: 10px 20px;
+    padding: 20px 20px;
     color: white;
     border: none;
     border-radius: 8px;
@@ -322,13 +321,14 @@
 }
 /* info section */
 .how-to-section {
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 60px 20px; /* Section mein upar-neeche space */
-    text-align: center; /* Sab kuch center mein */
-    background-color: white; /* Halka sa grey background */
+    /* text-align: center; Sab kuch center mein */
+    background-color:  #FAFAFB; /* Halka sa grey background */
 }
 
 .how-to-section h2 {
+    text-align: center;
     font-size: 2rem; /* Badi heading */
     margin-bottom: 40px; /* Heading ke neeche space */
     color: #333;
@@ -344,8 +344,11 @@
 
 .step {
     flex: 1; /* Har step ko barabar jagah do */
-    max-width: 300px; /* Maximum width */
+    max-width: 400px; /* Maximum width */
     padding: 20px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
 }
 
 .step i {
@@ -377,4 +380,187 @@
         max-width: 100%; /* Poori width le lo */
         margin-bottom: 20px;
     }
+}
+/* ================================== */
+/* === SUPPORTED PLATFORMS CSS === */
+/* ================================== */
+
+.supported-platforms {
+    padding: 60px 20px;
+    text-align: center;
+    /* Iska background color 'how-to' section
+       se alag rakhenge for contrast */
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+}
+
+.supported-platforms h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Is poore block ko copy karke purane wale se badal do */
+
+.platforms-grid {
+    display: grid;
+    /* Mobile par default 2 column */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Jab screen 768px se badi hogi, to 3 column ho jayenge */
+@media (min-width: 768px) {
+    .platforms-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.platform-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.platform-card:hover {
+    transform: translateY(-5px); /* Upar uthega */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Halka shadow */
+}
+
+.platform-card i {
+    font-size: 2.5rem; /* Icon ka size */
+    margin-bottom: 15px;
+}
+
+/* Alag-alag platform ke liye alag color */
+.platform-card .fa-youtube { color: #FF0000; }
+.platform-card .fa-instagram { color: #E4405F; }
+.platform-card .fa-tiktok { color: #000000; }
+.platform-card .fa-facebook-f { color: #1877F2; }
+.platform-card .fa-x-twitter { color: #000000; }
+.platform-card .fa-linkedin-in { color: #0A66C2; }
+
+
+.platform-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.supported-platforms .more-info {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #6c757d;
+}
+/* ================================== */
+/* ========= TESTIMONIALS CSS ========= */
+/* ================================== */
+
+.testimonials-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f9fa; /* Alternating background color */
+    border-top: 1px solid #e9ecef;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Cards ki height barabar rakho */
+    flex-wrap: wrap; /* Mobile par stack ho jaye */
+    gap: 30px; /* Cards ke beech mein gap */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    flex: 1; /* Barabar space lo */
+    min-width: 280px; /* Minimum width */
+    max-width: 350px; /* Maximum width */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.testimonial-card .stars {
+    color: #ffc107; /* Star color (gold) */
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.testimonial-card .testimonial-quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Ye quote ko extra space lene dega */
+}
+
+.testimonial-card .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Gol image ke liye */
+    margin-right: 15px;
+    
+    /* Ye background image ko theek se fit karega */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Jab tak image nahi hai, tab tak halka grey background */
+    background-color: #e0e0e0;
+}
+.user-avatar.user-1 {
+    background-image: url(../images/captain.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.user-avatar.user-2 {
+    background-image: url(../images/dogesh.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.user-avatar.user-3 {
+    background-image: url(../images/donaldtrump.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.testimonial-card .user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Gol image */
+    margin-right: 15px;
+    border: 2px solid #eee;
+}
+
+.testimonial-card .user-profile h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.testimonial-card .user-profile small {
+    font-size: 0.85rem;
+    color: #777;
 }

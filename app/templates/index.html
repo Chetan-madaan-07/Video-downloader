@@ -3,50 +3,50 @@
 {% block title %}Download Online Videos for Free!{% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block content %}
-    <section class="hero">
-        <h1>Download Youtube videos from Reel-Fetch <span class="highlight">100% Free</span></h1>
-        <p class="subtext">No signup, no limits. Just paste the link and go.</p>
-    </section>
+<section class="hero">
+    <h1>Download Youtube videos from Reel-Fetch <span class="highlight">100% Free</span></h1>
+    <p class="subtext">No signup, no limits. Just paste the link and go.</p>
+</section>
 
-    <section class="download-box">
-        <form class="input-group" onsubmit="handleDownload(event)">
-            <input type="text" placeholder="🔗 Paste video link here..." class="link-input" required>
-            <button class="download-btn" type="submit">Download</button>
-        </form>
+<section class="download-box">
+    <form class="input-group" onsubmit="handleDownload(event)">
+        <input type="text" placeholder="🔗 Paste video link here..." class="link-input" required>
+        <button class="download-btn" type="submit"><i class="fa-solid fa-download"></i> Download</button>
+    </form>
 
-        <div class="more-options">
-            <button class="more-header" type="button" onclick="toggleDropdown()">
-                <span>More Options</span>
-                <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <fieldset class="format-list" id="formatList">
-                <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
-                <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
-                <label><input type="radio" name="format" value="720p"> 720p HD</label>
-                <label><input type="radio" name="format" value="480p"> 480p SD</label>
-            </fieldset>
-        </div>
-    </section>
-    <section class="how-to-section">
-    <h2>How It Works</h2>
+    <div class="more-options">
+        <button class="more-header" type="button" onclick="toggleDropdown()">
+            <span>More Options</span>
+            <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <fieldset class="format-list" id="formatList">
+            <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
+            <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
+            <label><input type="radio" name="format" value="720p"> 720p HD</label>
+            <label><input type="radio" name="format" value="480p"> 480p SD</label>
+        </fieldset>
+    </div>
+</section>
+<section class="how-to-section">
+    <h2>How Reel-Fetch Works?</h2>
     <div class="steps-container">
-        
+
         <div class="step">
             <i class="fas fa-paste"></i>
             <h3>Step 1: Paste Link</h3>
             <p>Copy a video link from YouTube or another supported site and paste it above.</p>
         </div>
-        
+
         <div class="step">
             <i class="fas fa-list-ul"></i>
             <h3>Step 2: Choose Format</h3>
             <p>Select your preferred format — video (MP4) or just the audio (MP3).</p>
         </div>
-        
+
         <div class="step">
             <i class="fas fa-download"></i>
             <h3>Step 3: Click Download</h3>
@@ -55,8 +55,105 @@
 
     </div>
 </section>
+<section class="supported-platforms">
+    <h2>Supported Platforms</h2>
+    <div class="platforms-grid">
+        
+        <div class="platform-card">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+        </div>
+        
+        <div class="platform-card">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+        </div>
+        
+        <div class="platform-card">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+        </div>
+        
+        <div class="platform-card">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </div>
+        
+        <div class="platform-card">
+            <i class="fab fa-x-twitter"></i>
+            <span>X (Twitter)</span>
+        </div>
+        
+        <div class="platform-card">
+            <i class="fab fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+        </div>
+
+    </div>
+    <p class="more-info">And many more...</p>
+</section>
+<section class="testimonials-section">
+    <h2>What Our Users Say</h2>
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"This Site is cool, and I love downloading Civil wars clips"</p>
+            <div class="user-profile">
+                <div class="user-avatar user-1"></div>
+                <div class="user-info">
+                    <h4>Captain America</h4>
+                    <small>Avenger</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"The tool is fast, I love it. no useless irritating ads. And I hate Supreme Court"</p>
+            <div class="user-profile">
+                 <div class="user-avatar user-2"></div>
+                <div class="user-info">
+                    <h4>Dogesh bhai</h4>
+                    <small>Co-founder of Dog Gang</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-quote">"I am signing an executive order of making this official video downloader"</p>
+            <div class="user-profile">
+                 <div class="user-avatar user-3"></div>
+                <div class="user-info">
+                    <h4>Wet racoon</h4>
+                    <small>President of Shit land</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
