@@ -349,7 +349,13 @@
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
+.step:hover {
+    transform: translateY(-5px); /* Upar uthega */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Halka shadow */
+}
+
 
 .step i {
     font-size: 3rem; /* Icon ka size */
@@ -563,4 +569,176 @@
 .testimonial-card .user-profile small {
     font-size: 0.85rem;
     color: #777;
+}
+/* ================================== */
+/* =========== FAQ CSS ============ */
+/* ================================== */
+
+.faq-section {
+    padding: 60px 20px;
+    background-color: #ffffff; /* White background */
+    border-top: 1px solid #e9ecef;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.faq-container {
+    max-width: 750px; /* Thoda chota, aacha dikhta hai */
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden; /* Important for border-radius */
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* Aakhri item ke neeche border nahi */
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 500;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+/* JavaScript se add hone wali 'active' class ke liye style */
+.faq-question.active {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg); /* Arrow ko ghumao */
+}
+
+.faq-answer {
+    max-height: 0; /* By default answer chhupa rahega */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.faq-answer p {
+    padding: 0 20px 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+/* ================================== */
+/* ========= FOOTER CSS ============= */
+/* ================================== */
+
+.site-footer {
+    background-color: #191825; /* Dark charcoal background */
+    padding: 45px 20px 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #737373; /* Light grey text */
+}
+
+.footer-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.site-footer hr {
+    border-top-color: #bbb;
+    opacity: 0.5;
+}
+
+.site-footer h3 {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footer-about, .footer-links {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .footer-about {
+        width: 50%;
+    }
+    .footer-links {
+        width: 30%;
+    }
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #737373;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #007bff; /* Theme color on hover */
+    padding-left: 5px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #33353d;
+    color: #818181;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    background-color: #007bff; /* Theme color on hover */
+    color: #fff;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #33353d;
+    text-align: center;
+    font-size: 14px;
 }

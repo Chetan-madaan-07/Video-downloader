@@ -150,6 +150,42 @@ async function handleDownload(event) {
         downloadBtn.innerText = "Download";
     }
 }
+// ================================= //
+// ========= FAQ ACCORDION ========= //
+// ================================= //
+
+document.addEventListener("DOMContentLoaded", function() {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+
+        question.addEventListener("click", () => {
+            const currentlyActive = document.querySelector(".faq-question.active");
+            
+            // Agar pehle se koi aur question khula hai, to use band kar do
+            if (currentlyActive && currentlyActive !== question) {
+                currentlyActive.classList.remove("active");
+                currentlyActive.nextElementSibling.style.maxHeight = 0;
+                currentlyActive.nextElementSibling.querySelector('p').style.padding = "0 20px";
+            }
+            
+            // Current question ko toggle karo
+            question.classList.toggle("active");
+            const answer = question.nextElementSibling;
+            
+            if (question.classList.contains("active")) {
+                // Answer ko kholo
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                answer.querySelector('p').style.padding = "0 20px 20px";
+            } else {
+                // Answer ko band karo
+                answer.style.maxHeight = 0;
+                answer.querySelector('p').style.padding = "0 20px";
+            }
+        });
+    });
+});
 
 
 
