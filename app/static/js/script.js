@@ -93,7 +93,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-let progressInterval; // progress polling ka interval store karne ke liye
+var progressInterval; // progress polling ka interval store karne ke liye
 
 async function handleDownload(event) {
     event.preventDefault();
