@@ -319,6 +319,92 @@
 .more-header i.rotated {
     transform: rotate(180deg);
 }
+/* ===================== */
+/* Mobile Responsive CSS */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+    /* Hero Section */
+    .hero {
+        width: 100%;
+        height: auto;
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .hero .subtext {
+        font-size: 1rem;
+    }
+
+    /* Download Box */
+    .download-box {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    /* Input Group */
+    .input-group {
+        padding: 20px 10px;
+    }
+
+    .link-input {
+        padding: 18px 15px;
+        font-size: 14px;
+    }
+
+    /* Download Button */
+    .download-btn {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 15px;
+        padding: 14px;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+
+    /* More Options */
+    .more-header {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .format-list {
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -10px);
+        font-size: 14px;
+    }
+
+    .format-list.show {
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .download-btn {
+        font-size: 14px;
+    }
+
+    .format-list label {
+        display: block;
+        margin-bottom: 8px;
+    }
+}
+
 /* info section */
 .how-to-section {
     margin-top: 40px;

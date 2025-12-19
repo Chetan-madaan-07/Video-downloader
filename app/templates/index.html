@@ -7,30 +7,30 @@
 {% endblock %}
 
 {% block content %}
-<section class="hero">
-    <h1>Download Youtube videos from Reel-Fetch <span class="highlight">100% Free</span></h1>
-    <p class="subtext">No signup, no limits. Just paste the link and go.</p>
-</section>
+    <section class="hero">
+        <h1>Download Youtube videos from Reel-Fetch <span class="highlight">100% Free</span></h1>
+        <p class="subtext">No signup, no limits. Just paste the link and go.</p>
+    </section>
 
-<section class="download-box">
-    <form class="input-group" onsubmit="handleDownload(event)">
-        <input type="text" placeholder="🔗 Paste video link here..." class="link-input" required>
-        <button class="download-btn" type="submit"><i class="fa-solid fa-download"></i> Download</button>
-    </form>
+    <section class="download-box">
+        <form class="input-group" onsubmit="handleDownload(event)">
+            <input type="text" placeholder="🔗 Paste video link here..." class="link-input" required>
+            <button class="download-btn" type="submit"><i class="fa-solid fa-download"></i> Download</button>
+        </form>
 
-    <div class="more-options">
-        <button class="more-header" type="button" onclick="toggleDropdown()">
-            <span>More Options</span>
-            <i class="fa-solid fa-caret-down"></i>
-        </button>
-        <fieldset class="format-list" id="formatList">
-            <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
-            <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
-            <label><input type="radio" name="format" value="720p"> 720p HD</label>
-            <label><input type="radio" name="format" value="480p"> 480p SD</label>
-        </fieldset>
-    </div>
-</section>
+        <div class="more-options">
+            <button class="more-header" type="button" onclick="toggleDropdown()">
+                <span>More Options</span>
+                <i class="fa-solid fa-caret-down"></i>
+            </button>
+            <fieldset class="format-list" id="formatList">
+                <label><input type="radio" name="format" value="mp4" checked> MP4 (Video)</label>
+                <label><input type="radio" name="format" value="mp3"> MP3 (Audio)</label>
+                <label><input type="radio" name="format" value="720p"> 720p HD</label>
+                <label><input type="radio" name="format" value="480p"> 480p SD</label>
+            </fieldset>
+        </div>
+    </section>
 <section class="how-to-section">
     <h2>How Reel-Fetch Works?</h2>
     <div class="steps-container">
