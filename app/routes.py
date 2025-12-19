@@ -16,7 +16,7 @@ def login():
 
 main = Blueprint('main', __name__)
 
-@main.route('/api/download', methods=['POST'])
+@main.route('/download', methods=['POST'])
 def download():
     data = request.get_json()
     url = data.get('url')
