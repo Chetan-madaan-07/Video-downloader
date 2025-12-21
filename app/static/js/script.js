@@ -1,70 +1,70 @@
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 
-    const h1Element = document.querySelector('.hero h1');
-    if (!h1Element) return;
+//     const h1Element = document.querySelector('.hero h1');
+//     if (!h1Element) return;
 
-    const originalHTML = h1Element.innerHTML;
-    h1Element.innerHTML = '';
+//     const originalHTML = h1Element.innerHTML;
+//     h1Element.innerHTML = '';
 
-    // --- Animation Ki Alag-Alag Speed Settings ---
-   const normalTypingSpeed = 70;
-    const fastTypingSpeed = 5;
-    const normalDeletingSpeed = 50;  // Normal delete speed
-    const fastDeletingSpeed = 0;     // HTML tags ke liye fast delete speed
-    const loopPauseTime = 4000;
+//     // --- Animation Ki Alag-Alag Speed Settings ---
+//    const normalTypingSpeed = 70;
+//     const fastTypingSpeed = 5;
+//     const normalDeletingSpeed = 50;  // Normal delete speed
+//     const fastDeletingSpeed = 0;     // HTML tags ke liye fast delete speed
+//     const loopPauseTime = 4000;
 
-    // --- HTML Tag Ki Position Pata Karo ---
-    const tagStartIndex = originalHTML.indexOf('<');
-    const tagEndIndex = originalHTML.indexOf('>') + 1; // '>' character ko bhi include karna hai
-    let charIndex = 0;
-    let isDeleting = false;
+//     // --- HTML Tag Ki Position Pata Karo ---
+//     const tagStartIndex = originalHTML.indexOf('<');
+//     const tagEndIndex = originalHTML.indexOf('>') + 1; // '>' character ko bhi include karna hai
+//     let charIndex = 0;
+//     let isDeleting = false;
 
-    // --- Helper functions for each action ---
+//     // --- Helper functions for each action ---
 
-function handleTyping() {
-    // Check karo ki kya hum invisible tag wale hisse me hain
-    const isInsideTag = charIndex >= tagStartIndex && charIndex < tagEndIndex;
-    const currentSpeed = isInsideTag ? fastTypingSpeed : normalTypingSpeed;
+// function handleTyping() {
+//     // Check karo ki kya hum invisible tag wale hisse me hain
+//     const isInsideTag = charIndex >= tagStartIndex && charIndex < tagEndIndex;
+//     const currentSpeed = isInsideTag ? fastTypingSpeed : normalTypingSpeed;
 
-    charIndex++;
-    setTimeout(typeWriterLoop, currentSpeed);
-}
+//     charIndex++;
+//     setTimeout(typeWriterLoop, currentSpeed);
+// }
 
-function handleDeleting() {
-    // Check karo ki kya hum invisible tag wale hisse me hain
-    const isInsideTag = charIndex > tagStartIndex && charIndex <= tagEndIndex;
-    const currentSpeed = isInsideTag ? fastDeletingSpeed : normalDeletingSpeed;
+// function handleDeleting() {
+//     // Check karo ki kya hum invisible tag wale hisse me hain
+//     const isInsideTag = charIndex > tagStartIndex && charIndex <= tagEndIndex;
+//     const currentSpeed = isInsideTag ? fastDeletingSpeed : normalDeletingSpeed;
     
-    charIndex--;
-    setTimeout(typeWriterLoop, currentSpeed);
-}
+//     charIndex--;
+//     setTimeout(typeWriterLoop, currentSpeed);
+// }
 
-function handleReversing() {
-    isDeleting = !isDeleting;
+// function handleReversing() {
+//     isDeleting = !isDeleting;
     
-    // Agle loop se pehle rukne ka time decide karo
-    const pauseTime = (charIndex === 0) ? 500 : loopPauseTime;
-    setTimeout(typeWriterLoop, pauseTime);
-}
+//     // Agle loop se pehle rukne ka time decide karo
+//     const pauseTime = (charIndex === 0) ? 500 : loopPauseTime;
+//     setTimeout(typeWriterLoop, pauseTime);
+// }
 
-// --- MAIN LOOP FUNCTION (Ab bahut saaf ho gaya hai) ---
-function typeWriterLoop() {
-    // Ye line waise hi rahegi
-    const currentHTML = originalHTML.substring(0, charIndex);
-    h1Element.innerHTML = currentHTML + '<span class="typewriter-cursor">|</span>';
+// // --- MAIN LOOP FUNCTION (Ab bahut saaf ho gaya hai) ---
+// function typeWriterLoop() {
+//     // Ye line waise hi rahegi
+//     const currentHTML = originalHTML.substring(0, charIndex);
+//     h1Element.innerHTML = currentHTML + '<span class="typewriter-cursor">|</span>';
 
-    // Ab ye bas sahi helper function ko bulayega
-    if (!isDeleting && charIndex < originalHTML.length) {
-        handleTyping();
-    } else if (isDeleting && charIndex > 0) {
-        handleDeleting();
-    } else {
-        handleReversing();
-    }
-}
+//     // Ab ye bas sahi helper function ko bulayega
+//     if (!isDeleting && charIndex < originalHTML.length) {
+//         handleTyping();
+//     } else if (isDeleting && charIndex > 0) {
+//         handleDeleting();
+//     } else {
+//         handleReversing();
+//     }
+// }
 
-    typeWriterLoop();
-});
+//     typeWriterLoop();
+// });
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("show");
   document.getElementById("navBtns").classList.toggle("show");
